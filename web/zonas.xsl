@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Módulo: LMSGI – Lenguajes de Marcas y Sistemas de Gestión de Información
+    Unidad Didáctica: UD04 – Transformación de XML mediante XSLT
+    Tarea: Sitio web del Jardín Botánico con XML + XSLT
+    Autor: Laurence Sevilla
+    Fecha: 2025-01-12
+-->
+
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -29,7 +38,7 @@
                             <th>Ubicación</th>
                             <th>Horario</th>
                         </tr>
-
+                        <!-- Filtra las zonas donde horarioapertura es menor o igual que 10:00 -->
                         <xsl:for-each select="zonas/zona[number(substring-before(horarioapertura, ':')) &lt;= 10]">
                             <tr>
                                 <td>
@@ -37,6 +46,7 @@
                                 </td>
 
                                 <td>
+                                    <!-- Marca en azul las ubicaciones que contienen "Exterior" -->
                                     <xsl:if test="contains(ubicacion, 'Exterior')">
                                         <xsl:attribute name="class">azul</xsl:attribute>
                                     </xsl:if>

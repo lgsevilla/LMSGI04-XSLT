@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Módulo: LMSGI – Lenguajes de Marcas y Sistemas de Gestión de Información
+    Unidad Didáctica: UD04 – Transformación de XML mediante XSLT
+    Tarea: Sitio web del Jardín Botánico con XML + XSLT
+    Autor: Laurence Sevilla
+    Fecha: 2025-01-12
+-->
+
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -26,7 +35,7 @@
 
                     <xsl:for-each select="plantas/planta">
                         <article class="articulo">
-
+                            <!-- Imagen de la planta, obtenida desde el atributo @foto -->
                             <img class="imagen">
                                 <xsl:attribute name="src">
                                     <xsl:value-of select="concat('../img/', @foto)"/>
@@ -44,6 +53,7 @@
                             </xsl:if>
 
                             <h2>
+                                <!-- Enlace dinámico a Wikipedia usando la familia botánica -->
                                 <a target="_blank">
                                     <xsl:attribute name="href">
                                         <xsl:value-of
