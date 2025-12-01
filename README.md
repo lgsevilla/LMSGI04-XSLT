@@ -1,5 +1,8 @@
 # Transformación XML con XSLT
 
+Demo en GitHub Pages:
+https://lgsevilla.github.io/LMSGI04-XSLT/
+
 Este proyecto genera tres páginas web dinámicas a partir de un único documento XML mediante XSLT. Cada vista utiliza filtrado y transformaciones específicas para mostrar información del jardín botánico.
 
 ## Contenido del proyecto
